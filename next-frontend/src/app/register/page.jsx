@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import Link from "next/link";
-import axios from "axios";
+import axios from "@/lib/axios";
 import { withAuth } from "@/components/withAuth";
 import { ReloadIcon } from "@radix-ui/react-icons";
 
@@ -45,7 +45,7 @@ function RegisterPage() {
     try {
       setLoading(true);
       axios
-        .post(process.env.NEXT_PUBLIC_SERVER_IP + "/register", {
+        .post("/auth/register", {
           name,
           email,
           password,

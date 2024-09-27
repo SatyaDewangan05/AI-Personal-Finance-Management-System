@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import Link from "next/link";
-import axios from "axios";
+import axios from "@/lib/axios";
 import { useAuth } from "@/components/AuthProvider";
 import { jwtDecode } from "jwt-decode";
 import { withAuth } from "@/components/withAuth";
@@ -41,7 +41,7 @@ function LoginPage() {
     try {
       setLoading(true);
       // "http://localhost:8500/login",
-      const response = await axios.post("http://localhost:5000/auth/login", {
+      const response = await axios.post("/auth/login", {
         email,
         password,
       });
