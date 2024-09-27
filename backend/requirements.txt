@@ -4,3 +4,5 @@ Flask-JWT-Extended
 Flask-Cors
 pymongo
 python-dotenv
+flask_cors
+openai
