@@ -38,6 +38,11 @@ def serialize_object_id(obj):
         f"Object of type {obj.__class__.__name__} is not JSON serializable")
 
 
+@app.route('/', methods=['GET'])
+def check():
+    return "hello world"
+
+
 # Get user profile
 @app.route('/api/profile', methods=['GET'])
 @jwt_required()
