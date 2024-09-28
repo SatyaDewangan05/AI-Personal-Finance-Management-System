@@ -1,6 +1,7 @@
 # Personal Finance Tracker
 
 A web-based platform for tracking income, expenses, and budgets with analytics features.
+Live: https://ai-finance-manager.vercel.app/
 
 ## Setup
 
