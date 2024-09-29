@@ -23,12 +23,13 @@ CORS(app)
 app.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY')
 app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(days=1)
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+MONGO_URI = os.getenv('MONGO_URI')
 
 # Initialize extensions
 bcrypt = Bcrypt(app)
 jwt = JWTManager(app)
 
-db = get_database()
+db = get_database(MONGO_URI)
 
 
 def serialize_object_id(obj):

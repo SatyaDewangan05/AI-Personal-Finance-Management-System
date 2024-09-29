@@ -2,11 +2,10 @@ from pymongo import MongoClient
 from config import Config
 
 
-def get_database():
+def get_database(MONGO_URI):
     # print('srv: ', Config.MONGO_URI)
     # Create a connection using MongoClient. You can import MongoClient or use pymongo.MongoClient
-    client = MongoClient(
-        "mongodb+srv://admin:j6L8T!*gkZx!39V@cluster0.0z1y8.mongodb.net/finance_tracker")
+    client = MongoClient(MONGO_URI)
     db = client["finance_tracker"]
     return db
 
