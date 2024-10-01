@@ -29,7 +29,7 @@ MONGO_URI = os.getenv('MONGO_URI')
 bcrypt = Bcrypt(app)
 jwt = JWTManager(app)
 
-db = get_database(MONGO_URI)
+db = get_database()
 
 
 def serialize_object_id(obj):

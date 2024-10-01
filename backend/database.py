@@ -1,8 +1,14 @@
 from pymongo import MongoClient
 from config import Config
+from dotenv import load_dotenv
+import os
+
+# Load environment variables
+load_dotenv()
+MONGO_URI = os.getenv('MONGO_URI')
 
 
-def get_database(MONGO_URI):
+def get_database():
     # print('srv: ', Config.MONGO_URI)
     # Create a connection using MongoClient. You can import MongoClient or use pymongo.MongoClient
     client = MongoClient(MONGO_URI)
